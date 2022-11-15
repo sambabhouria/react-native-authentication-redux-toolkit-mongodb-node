@@ -1,74 +1,60 @@
-// Example to Use React Native Vector Icons
-// https://aboutreact.com/react-native-vector-icons/
- 
-// Import React
-import React from 'react';
- 
-// Import required component
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
- 
-// Import vector icons
-import Icon from 'react-native-vector-icons/FontAwesome';
- 
-const App = () => {
+/* eslint-disable react/react-in-jsx-scope */
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import UserLoginScreen from './src/app/screen/auth/UserLoginScreen';
+import ShopTab from './src/app/screen/shop/ShopTab';
+import RegistrationScreen from './src/app/screen/auth/RegistrationScreen';
+import SendPasswordResetEmailScreen from './src/app/screen/auth/SendPasswordResetEmailScreen';
+import UserPanelTab from './src/app/screen/UserPanelTab';
+import {store} from './src/app/store';
+import {Provider} from 'react-redux';
+
+const Stack = createNativeStackNavigator();
+
+function App() {
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <View style={{flex: 1, padding: 16}}>
-        <View style={styles.container}>
-          <Text style={styles.heading}>
-            Example to Use React Native Vector Icons
-          </Text>
-          <View style={styles.iconContainer}>
-            <Text>
-              <Icon name="rocket" size={30} color="#900" />
-            </Text>
-            {/* Icon Component */}
-            <Icon name="rocket" size={30} color="#900" />
-          </View>
-          <View style={{marginTop: 16, marginBottom: 16}}>
-            {/* Icon.Button Component */}
-            <Icon.Button
-              name="facebook"
-              backgroundColor="#3b5998"
-              onPress={() => alert('Login with Facebook')}>
-              Login with Facebook
-            </Icon.Button>
-          </View>
-        </View>
-        <Text style={styles.footerTitle}>Vector Icons</Text>
-        <Text style={styles.footerText}>www.aboutreact.com</Text>
-      </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Provider store={store}>
+        <Stack.Navigator
+          screenOptions={{
+            headerStyle: {backgroundColor: 'purple'},
+            headerTintColor: 'white',
+          }}>
+          <Stack.Screen
+            name="ShopTab"
+            component={ShopTab}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="UserLogin"
+            component={UserLoginScreen}
+            options={{title: 'User Login'}}
+          />
+          <Stack.Screen
+            name="Registration"
+            component={RegistrationScreen}
+            options={{title: 'Registration', headerBackVisible: false}}
+          />
+          <Stack.Screen
+            name="SendPasswordResetEmail"
+            component={SendPasswordResetEmailScreen}
+            options={{title: 'Forgot Password'}}
+          />
+          <Stack.Screen
+            name="UserPanelTab"
+            component={UserPanelTab}
+            options={{headerShown: false}}
+          />
+        </Stack.Navigator>
+      </Provider>
+    </NavigationContainer>
+  );
+}
+
+export default () => {
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
   );
 };
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  heading: {
-    fontSize: 20,
-    textAlign: 'center',
-    marginBottom: 20,
-  },
-  iconContainer: {
-    marginTop: 16,
-    marginBottom: 16,
-    justifyContent: 'center',
-    alignItems: 'center',
-    textAlign: 'center',
-  },
-  footerTitle: {
-    fontSize: 18,
-    textAlign: 'center',
-    color: 'grey',
-  },
-  footerText: {
-    fontSize: 16,
-    textAlign: 'center',
-    color: 'grey',
-  },
-});
-
-export default App;

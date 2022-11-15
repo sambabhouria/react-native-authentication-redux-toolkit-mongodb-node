@@ -1,42 +1,27 @@
 
 
-# Vector Icons
+# React Native and Express Node JS Complete Authentication
 
-React Native Vector Icons are very popular icons in React Native. In this post, we will see Example to Use Vector Icons in React Native using react-native-vector-icons. Vector Icons are perfect for buttons, logos and nav/tab bars. Vector Icons are easy to extend, style and integrate into your project.
+Authentication using React Native and Express Node JS
+#  Topics
 
-
-#  How to use Vector Icons in React Native?
-
-To use Vector Icons you have to follow the below steps:
-
-Create a new React Native project
-Install the Dependency (react-native-vector-icons)
-Install CocoaPods
-Importing Icon Files in Android
-Importing Icon Files in iOS
-Lastly, Import icon component in your project and start using it
-
-#  Importing Icon Files in Android
-
-To use Vector Icon in Android we need to import the Icons from react-native-vector-icons,
-
-Create assets/fonts directory in android/app/src/main
-Once you create the fonts directory copy all the font files from node_modules/react-native-vector-icons/Fonts into it
-
-<img src="./android.png">
-
-# Importing Icon Files in iOS
-
-Please follow the below steps to use vector icons in iOS
-
-1. Create a fonts directory in ios and copy all the font files from node_modules/react-native-vector-icons/Fonts into it
-
-<img src="./ios1.png">
-<img src="./ios1.png">
-<img src="./ios3.png">
-<img src="./ios4.png">
+    1. Redux Toolkit
+    2. Toolkit Configuration
+    3. Registration
+    4. Login
+    5. JWT Token
+    6. Async Storage
+    7. Get Logged User Data
+    8. Logout
+    9. Send Password Reset Email
+    10. Change Password
+    11. edux State Management
 
 # `screenShot`
 
 <img src="./1.png">
 <img src="./2.png"/>
+<img src="./3.png"/>
+<img src="./4.png"/>
+<img src="./5.png"/>
+<img src="./6.png"/>
